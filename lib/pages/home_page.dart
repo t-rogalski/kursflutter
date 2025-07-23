@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/size.dart';
 import 'package:flutter_application_1/widgets/drawer_mobile.dart';
+import 'package:flutter_application_1/widgets/intro_message.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
+import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/navbar_desktop.dart';
 import 'package:flutter_application_1/widgets/navbar_mobile.dart';
 
@@ -39,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                     ),
 
               //MAIN
-              MainDesktop(),
+              constraints.maxWidth >= kminWidth ? MainDesktop() : MainMobile(),
 
               //SKILLS
 
