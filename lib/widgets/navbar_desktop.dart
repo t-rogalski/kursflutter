@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/colors.dart';
+import 'package:flutter_application_1/constants/navbar_names.dart';
+import 'package:flutter_application_1/widgets/site_logo.dart';
+
+class NavbarDesktop extends StatelessWidget {
+  const NavbarDesktop({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: double.maxFinite,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            CustomColor.scaffoldBg,
+            CustomColor.bgLightk,
+            CustomColor.scaffoldBg,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          SiteLogo(onTap: () => {}),
+          Spacer(),
+          for (String navitem in navbarNames)
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: TextButton(
+                onPressed: () => {},
+                child: Text(
+                  navitem,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: CustomColor.whitePrimary,
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
