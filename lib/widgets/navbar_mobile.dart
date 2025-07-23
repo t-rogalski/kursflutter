@@ -11,9 +11,9 @@ class NavbarMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 75,
       width: double.maxFinite,
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: navbarDecoration(),
       child: Row(
         children: [
