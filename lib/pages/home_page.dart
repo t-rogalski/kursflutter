@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/size.dart';
 import 'package:flutter_application_1/widgets/drawer_mobile.dart';
+import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/navbar_desktop.dart';
 import 'package:flutter_application_1/widgets/navbar_mobile.dart';
 
@@ -16,6 +17,10 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -25,7 +30,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              //MAIN
+              //NAVBAR
               constraints.maxWidth >= kminWidth
                   ? NavbarDesktop()
                   : NavbarMobile(
@@ -33,12 +38,11 @@ class _HomePageState extends State<HomePage> {
                           _scaffoldKey.currentState?.openEndDrawer(),
                     ),
 
+              //MAIN
+              MainDesktop(),
+
               //SKILLS
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: CustomColor.bgLightk,
-              ),
+
               //PROJECTS
               Container(
                 height: 500,
