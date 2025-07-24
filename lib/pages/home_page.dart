@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/size.dart';
-import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/widgets/drawer_mobile.dart';
-import 'package:flutter_application_1/widgets/intro_message.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/navbar_desktop.dart';
 import 'package:flutter_application_1/widgets/navbar_mobile.dart';
 import 'package:flutter_application_1/widgets/skills_desktop.dart';
+import 'package:flutter_application_1/widgets/skills_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -64,7 +63,9 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: 30),
 
                     //platforms & skills
-                    SkillsDesktop(),
+                    constraints.maxWidth >= kmedWidth
+                        ? SkillsDesktop()
+                        : SkillsMobile(),
                   ],
                 ),
               ),
