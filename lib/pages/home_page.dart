@@ -79,6 +79,7 @@ class _HomePageState extends State<HomePage> {
               // //CHARACTERS
               // CharactersSection(),
               // SizedBox(height: 20),
+
               //CONTACT
               ContactSection(),
             ],

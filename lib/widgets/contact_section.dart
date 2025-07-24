@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
+import 'package:flutter_application_1/constants/size.dart';
 import 'package:flutter_application_1/widgets/custom_text_field.dart';
 
 class ContactSection extends StatelessWidget {
@@ -21,17 +22,16 @@ class ContactSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 700),
-            child: Row(
-              children: [
-                // name
-                Flexible(child: CustomTextField(hintText: "Your name")),
 
-                // email
-                SizedBox(width: 15),
-                Flexible(child: CustomTextField(hintText: "Your email")),
-              ],
+          //name & email
+          ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 700, maxHeight: 100),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return constraints.maxWidth >= kminWidth
+                    ? buildNameEmailFieldDesktop()
+                    : buildNameEmailFieldMobile();
+              },
             ),
           ),
           SizedBox(height: 15),
@@ -45,7 +45,7 @@ class ContactSection extends StatelessWidget {
 
           // send button
           ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 700),
+            constraints: BoxConstraints(maxWidth: 700, maxHeight: 100),
             child: SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(
@@ -77,6 +77,32 @@ class ContactSection extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Row buildNameEmailFieldDesktop() {
+    return Row(
+      children: [
+        // name
+        Flexible(child: CustomTextField(hintText: "Your name")),
+
+        // email
+        SizedBox(width: 15),
+        Flexible(child: CustomTextField(hintText: "Your email")),
+      ],
+    );
+  }
+
+  Column buildNameEmailFieldMobile() {
+    return Column(
+      children: [
+        // name
+        Flexible(child: CustomTextField(hintText: "Your name")),
+
+        // email
+        SizedBox(height: 15),
+        Flexible(child: CustomTextField(hintText: "Your email")),
+      ],
     );
   }
 }
