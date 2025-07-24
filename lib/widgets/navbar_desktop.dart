@@ -5,7 +5,8 @@ import 'package:flutter_application_1/styles/navbar_decoration.dart';
 import 'package:flutter_application_1/widgets/site_logo.dart';
 
 class NavbarDesktop extends StatelessWidget {
-  const NavbarDesktop({super.key});
+  const NavbarDesktop({super.key, required this.onNavMenuTap});
+  final Function(int) onNavMenuTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,13 @@ class NavbarDesktop extends StatelessWidget {
         children: [
           SiteLogo(onTap: () => {}),
           Spacer(),
-          for (String navitem in navbarNames)
+          for (int i = 0; i < navbarNames.length; i++)
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextButton(
-                onPressed: () => {},
+                onPressed: () => {onNavMenuTap(i)},
                 child: Text(
-                  navitem,
+                  navbarNames[i],
                   style: TextStyle(
                     fontSize: 20,
                     color: CustomColor.whitePrimary,

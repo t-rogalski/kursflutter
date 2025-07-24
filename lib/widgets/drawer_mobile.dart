@@ -3,7 +3,8 @@ import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/navbar_names.dart';
 
 class DrawerMobile extends StatelessWidget {
-  const DrawerMobile({super.key});
+  const DrawerMobile({super.key, required this.onNavItemTap});
+  final Function(int) onNavItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,9 @@ class DrawerMobile extends StatelessWidget {
                 ),
                 leading: Icon(navbarIcons[i], color: CustomColor.whitePrimary),
                 title: Text(navbarNames[i]),
-                onTap: () {},
+                onTap: () {
+                  onNavItemTap(i);
+                },
               ),
           ],
         ),
