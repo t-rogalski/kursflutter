@@ -20,6 +20,7 @@ List<CharacterUtils> charactersList = [
     title: 'Admiral Maurycjusz Borubar',
     subtitle:
         'Chodzi o pierwszą z osób na tym stanowisku, jaką poznaliśmy w całej historii. Darzył Bombę tak wielką sympatią, że bezgranicznie mu ufał, posyłając na niemal każdą misję.',
+    youtubeLink: 'https://www.youtube.com/watch?v=JnN5zCU-3Bc',
   ),
   CharacterUtils(
     image: 'assets/chorazytorpeda.png',
@@ -27,12 +28,14 @@ List<CharacterUtils> charactersList = [
     subtitle:
         'Rywalizuje z Bombą od lat, także na poziomie wzajemnego ubliżania sobie nawzajem - kapitan do bólu wykorzystuje osobliwy sposób bycia Torpedy.',
     webLink: 'https://filmy.fandom.com/wiki/Chor%C4%85%C5%BCy_Torpeda',
+    youtubeLink: 'https://www.youtube.com/watch?v=2QRIDVji0v0',
   ),
   CharacterUtils(
     image: 'assets/kapitantytusbomba.png',
     title: 'Kapitan Tytus Bomba',
     subtitle:
         'Dowódca legendarnego Orzeła 7, pasjonat wojskowości, nałogowy pochłaniacz hot-dogów.',
+    webLink: 'https://filmy.fandom.com/wiki/Tytus_Bomba',
   ),
   CharacterUtils(
     image: 'assets/sebastianbak.png',
