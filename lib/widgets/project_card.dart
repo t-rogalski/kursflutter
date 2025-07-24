@@ -12,8 +12,8 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 280,
-      width: 250,
+      height: 300,
+      width: 260,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: CustomColor.bgLight2,
@@ -25,7 +25,7 @@ class ProjectCard extends StatelessWidget {
           Image.asset(
             character.image,
             height: 140,
-            width: 250,
+            width: 260,
             fit: BoxFit.cover,
           ),
           // title
@@ -50,6 +50,7 @@ class ProjectCard extends StatelessWidget {
           Spacer(),
           // footer
           Container(
+            height: 40,
             color: CustomColor.bgLightk,
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             child: Row(
@@ -58,12 +59,14 @@ class ProjectCard extends StatelessWidget {
                   "Sprawdź też:",
                   style: TextStyle(
                     color: CustomColor.yellowSecondary,
-                    fontSize: 10,
+                    fontSize: 12,
                   ),
                 ),
                 Spacer(),
                 if (character.youtubeLink != null)
                   IconButton(
+                    padding: EdgeInsets.all(0),
+                    constraints: BoxConstraints(),
                     icon: Icon(Icons.play_arrow),
                     onPressed: () {
                       js.context.callMethod("open", [character.youtubeLink]);
@@ -73,6 +76,8 @@ class ProjectCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: IconButton(
+                      padding: EdgeInsets.all(0),
+                      constraints: BoxConstraints(),
                       icon: Icon(Icons.web_asset),
                       onPressed: () {
                         js.context.callMethod("open", [character.webLink]);

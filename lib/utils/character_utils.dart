@@ -26,6 +26,7 @@ List<CharacterUtils> charactersList = [
     title: 'Chorąży J.J. Torpeda',
     subtitle:
         'Rywalizuje z Bombą od lat, także na poziomie wzajemnego ubliżania sobie nawzajem - kapitan do bólu wykorzystuje osobliwy sposób bycia Torpedy.',
+    webLink: 'https://filmy.fandom.com/wiki/Chor%C4%85%C5%BCy_Torpeda',
   ),
   CharacterUtils(
     image: 'assets/kapitantytusbomba.png',
