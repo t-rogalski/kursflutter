@@ -8,6 +8,7 @@ import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/navbar_desktop.dart';
 import 'package:flutter_application_1/widgets/navbar_mobile.dart';
+import 'package:flutter_application_1/widgets/skills_desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -60,40 +61,10 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 30),
+
                     //platforms & skills
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        //platforms
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 450),
-                          child: Wrap(
-                            spacing: 5,
-                            runSpacing: 5,
-                            children: [
-                              for (int i = 0; i < platformItems.length; i++)
-                                Container(
-                                  width: 200,
-                                  decoration: BoxDecoration(
-                                    color: CustomColor.bgLight2,
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 10,
-                                    ),
-                                    leading: Icon(platformItems[i]["img"]),
-                                    title: Text(platformItems[i]["title"]),
-                                  ),
-                                ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    SkillsDesktop(),
                   ],
                 ),
               ),
