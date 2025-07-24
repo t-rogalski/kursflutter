@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/size.dart';
+import 'package:flutter_application_1/constants/skill_items.dart';
 import 'package:flutter_application_1/widgets/drawer_mobile.dart';
 import 'package:flutter_application_1/widgets/intro_message.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
@@ -44,12 +45,64 @@ class _HomePageState extends State<HomePage> {
               constraints.maxWidth >= kminWidth ? MainDesktop() : MainMobile(),
 
               //SKILLS
+              Container(
+                width: screenWidth,
+                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: Colors.blueGrey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Co umiem?",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: CustomColor.whitePrimary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    //platforms & skills
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        //platforms
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 450),
+                          child: Wrap(
+                            spacing: 5,
+                            runSpacing: 5,
+                            children: [
+                              for (int i = 0; i < platformItems.length; i++)
+                                Container(
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                    color: CustomColor.bgLight2,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: ListTile(
+                                    contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 10,
+                                    ),
+                                    leading: Icon(platformItems[i]["img"]),
+                                    title: Text(platformItems[i]["title"]),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
 
               //PROJECTS
               Container(
                 height: 500,
                 width: double.maxFinite,
-                color: Colors.blueGrey,
+                color: Colors.grey,
               ),
               //CONTACT
               Container(height: 500, width: double.maxFinite),

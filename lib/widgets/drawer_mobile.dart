@@ -34,6 +34,7 @@ class DrawerMobile extends StatelessWidget {
                 ),
                 leading: Icon(navbarIcons[i], color: CustomColor.whitePrimary),
                 title: Text(navbarNames[i]),
+                onTap: () {},
               ),
           ],
         ),
