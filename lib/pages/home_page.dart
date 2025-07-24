@@ -3,6 +3,8 @@ import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/constants/size.dart';
 import 'package:flutter_application_1/utils/character_utils.dart';
 import 'package:flutter_application_1/widgets/characters_section.dart';
+import 'package:flutter_application_1/widgets/contact_section.dart';
+import 'package:flutter_application_1/widgets/custom_text_field.dart';
 import 'package:flutter_application_1/widgets/drawer_mobile.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
@@ -36,47 +38,49 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              //NAVBAR
-              constraints.maxWidth >= kminWidth
-                  ? NavbarDesktop()
-                  : NavbarMobile(
-                      onMenuTap: () =>
-                          _scaffoldKey.currentState?.openEndDrawer(),
-                    ),
+              // //NAVBAR
+              // constraints.maxWidth >= kminWidth
+              //     ? NavbarDesktop()
+              //     : NavbarMobile(
+              //         onMenuTap: () =>
+              //             _scaffoldKey.currentState?.openEndDrawer(),
+              //       ),
 
-              //MAIN
-              constraints.maxWidth >= kminWidth ? MainDesktop() : MainMobile(),
+              // //MAIN
+              // constraints.maxWidth >= kminWidth ? MainDesktop() : MainMobile(),
 
-              //SKILLS
-              Container(
-                width: screenWidth,
-                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
-                color: Colors.blueGrey,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      "Co umiem?",
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: CustomColor.whitePrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 30),
+              // //SKILLS
+              // Container(
+              //   width: screenWidth,
+              //   padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
+              //   color: Colors.blueGrey,
+              //   child: Column(
+              //     mainAxisSize: MainAxisSize.min,
+              //     children: [
+              //       Text(
+              //         "Co umiem?",
+              //         style: TextStyle(
+              //           fontSize: 24,
+              //           color: CustomColor.whitePrimary,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //       SizedBox(height: 30),
 
-                    //platforms & skills
-                    constraints.maxWidth >= kmedWidth
-                        ? SkillsDesktop()
-                        : SkillsMobile(),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              //CHARACTERS
-              CharactersSection(),
+              //       //platforms & skills
+              //       constraints.maxWidth >= kmedWidth
+              //           ? SkillsDesktop()
+              //           : SkillsMobile(),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(height: 20),
+
+              // //CHARACTERS
+              // CharactersSection(),
+              // SizedBox(height: 20),
               //CONTACT
-              Container(height: 500, width: double.maxFinite),
+              ContactSection(),
             ],
           ),
         );
